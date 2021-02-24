@@ -23,7 +23,8 @@ export default function HeadComp() {
                 document.getElementById("cevap").innerHTML += (i+1) + ". Oynayış = " + (Math.round(((arr[i] * miktar / sum) + Number.EPSILON) * 100) / 100)  + "<br>";
                 gerekliPara += (Math.round(((arr[i] * miktar / sum) + Number.EPSILON) * 100) / 100);
             }
-            document.getElementById("cevap").innerHTML += "+___________ " + '<br>' + (gerekliPara) + "<br>";
+            document.getElementById("cevap").innerHTML += "__________________+= " +  ((Math.round(((gerekliPara) + Number.EPSILON) * 100) / 100)) + "<br>";
+            document.getElementById("cevap").innerHTML += "<small>" + kere + " kere kaybetme olasılığı: " + ((Math.round((100/(Math.pow(2, kere)) + Number.EPSILON) * 100) / 100)) + "<br></small>";
         }
     }
 
@@ -54,7 +55,7 @@ export default function HeadComp() {
                 </div>
 
                 <div className="bir-kutu p5">
-                    <p id="cevap">Hesaplamalar</p>
+                    <p id="cevap"></p>
                 </div>
             </section>
         </div>
