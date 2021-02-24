@@ -1,7 +1,7 @@
 export default function HeadComp() {
 
     
-    function deneme() {
+    function myf() {
         let miktar = document.getElementById("miktar").value || 0;
         let kere = document.getElementById("kere").value || 0;
         let oran = document.getElementById("oran").value || 0;
@@ -24,7 +24,7 @@ export default function HeadComp() {
                 gerekliPara += (Math.round(((arr[i] * miktar / sum) + Number.EPSILON) * 100) / 100);
             }
             document.getElementById("cevap").innerHTML += "__________________+= " +  ((Math.round(((gerekliPara) + Number.EPSILON) * 100) / 100)) + "<br>";
-            document.getElementById("cevap").innerHTML += "<small>" + kere + " kere kaybetme olasılığı: " + ((Math.round((100/(Math.pow(2, kere)) + Number.EPSILON) * 100) / 100)) + "<br></small>";
+            document.getElementById("cevap").innerHTML += "<small>" + kere + " kere <b> üst üste </b> kaybetme olasılığı: " + ((Math.round((100/(Math.pow(2, kere)) + Number.EPSILON) * 100) / 100)) + "<br></small>";
         }
     }
 
@@ -43,15 +43,15 @@ export default function HeadComp() {
             <section>
                 <div className="bir-kutu">
                     <label>Miktarın Nedir:</label>
-                    <input id="miktar" onKeyUp={deneme} placeholder="144" min="0" type="number" className="numberinput" />
+                    <input id="miktar" onKeyUp={myf} placeholder="144" min="0" type="number" className="numberinput" />
                 </div>
                 <div className="bir-kutu">
                     <label>Kaç Kere Deneme Hakkı İstiyorsun:</label>
-                    <input id="kere" onKeyUp={deneme} placeholder="7" min="0" type="number" className="numberinput" />
+                    <input id="kere" onKeyUp={myf} placeholder="7" min="0" type="number" className="numberinput" />
                 </div>
                 <div className="bir-kutu">
                     <label>Grafik Oranın Nedir:</label>
-                    <input id="oran" onKeyUp={deneme} placeholder="80" min="0" type="number" className="numberinput" />
+                    <input id="oran" onKeyUp={myf} placeholder="80" min="0" type="number" className="numberinput" />
                 </div>
 
                 <div className="bir-kutu p5">
